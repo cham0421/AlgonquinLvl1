@@ -1,6 +1,5 @@
-
 function setForLoopValues(str) {
- return Number(prompt(str, ""));
+  return Number(prompt(str, ""));
 }
 var minimum = setForLoopValues("Enter value for minimum")
 var maximum = setForLoopValues("Enter value for maximum")
