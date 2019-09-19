@@ -1,2 +1,6 @@
 USE world;
-SELECT * FROM City 
+
+SELECT 
+    *
+FROM
+    city
