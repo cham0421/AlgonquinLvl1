@@ -14,7 +14,7 @@ FROM
     city
 WHERE
     countrycode = 'NLD'
-        AND district LIKE '%Holland'
+        AND district LIKE '%Holland%'
 LIMIT 9999;
 
 -- List the name and the code off all the cities with a population larger than 20000. Sort the output by Population in descending order.
@@ -23,7 +23,7 @@ SELECT
 FROM
     city
 WHERE
-    population < 20000
+    population > 20000
 ORDER BY population DESC
 LIMIT 9999;
 
@@ -65,8 +65,8 @@ FROM
     country
 WHERE
     Continent = 'Europe'
-        || Continent = 'North America'
-ORDER BY Continent , name ASC
+        OR Continent = 'North America'
+ORDER BY Continent , name 
 LIMIT 9999;
 
 -- Using NOT IN, list the names and the continent of all the countries not in Europe nor North America. Sort the output by continent then by name.
@@ -76,7 +76,7 @@ FROM
     country
 WHERE
     Continent NOT IN ('Europe' , 'North America')
-ORDER BY Continent , name ASC
+ORDER BY Continent , name 
 LIMIT 9999;
 
 -- List the names and the continent of all the countries whose continent's name contains the string America. Sort the output by continent then by name.
@@ -85,7 +85,7 @@ SELECT
 FROM
     country
 WHERE
-    Continent LIKE ('%America%')
+    Continent LIKE '%America%'
 ORDER BY Continent , name ASC
 LIMIT 9999;
 
