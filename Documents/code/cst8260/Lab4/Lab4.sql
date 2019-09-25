@@ -33,8 +33,9 @@ SELECT
 FROM
     country
 WHERE
-    Population < 22000000
-        AND (indepyear = 1993 OR IndepYear < 1991)
+    IndepYear = 1993
+        OR (Population < 22000000
+        AND IndepYear < 1991)
 LIMIT 9999;
 
 -- List the names and the IndepYear of all the countries that became independent between 1960 and 1980 (both exclusively). Sort the output by independence year.
