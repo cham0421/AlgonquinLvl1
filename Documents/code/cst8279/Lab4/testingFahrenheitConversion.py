@@ -1,13 +1,13 @@
-import waseemChamaaLibrary
+import cham0421Library
 # Tests for conversion of Fahrenheit to Celcius.
 print("Testing Fahrenheit to Celcius at 50F") 
 print("Expected: 10.0C")
-print("Actual:   {}C".format( round(waseemChamaaLibrary.convertFahrenheitToCelsius(50),2) ))
+print("Actual:   {}C".format( round(cham0421Library.convertFahrenheitToCelsius(50),2) ))
 
 print("Testing Fahrenheit to Celcius at 40F")
 print("Expected: 4.44C")
-print("Actual:   {}C".format( round(waseemChamaaLibrary.convertFahrenheitToCelsius(40),2) ))
+print("Actual:   {}C".format( round(cham0421Library.convertFahrenheitToCelsius(40),2) ))
 
 print("Testing Fahrenheit to Celcius at 11F")
 print("Expected: -11.67C")
-print("Actual:   {}C".format( round(waseemChamaaLibrary.convertFahrenheitToCelsius(11),2) ))
+print("Actual:   {}C".format( round(cham0421Library.convertFahrenheitToCelsius(11),2) ))
