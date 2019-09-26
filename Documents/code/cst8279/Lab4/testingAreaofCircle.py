@@ -1,4 +1,13 @@
 import lab4
-print("Testing Area of a Circle. Expected: radius=5, area = 78.54 Actual: radius=5, area = {}".format( round(lab4.calculateAreaOfCircle(5),2 )))
-print("Testing Area of a Circle. Expected: radius=13.5, area = 572.56 Actual: radius=5, area = {}".format( round(lab4.calculateAreaOfCircle(13.5),2 )))
-print("Testing Area of a Circle. Expected: radius=50, area = 7853.98 Actual: radius=5, area = {}".format( round(lab4.calculateAreaOfCircle(50),2 )))
+# Tests for Area of a Circle
+print("Testing Area of a Circle Number 1 with radius = 5")
+print("Expected: area = 78.54") 
+print("Actual:   area = {}".format( round(lab4.calculateAreaOfCircle(5), 2) ))
+
+print("Testing Area of a Circle Number 2 with radius = 13.5")
+print("Expected: area = 572.56") 
+print("Actual:   area = {}".format( round(lab4.calculateAreaOfCircle(13.5),2) ))
+
+print("Testing Area of a Circle Number 3 with radius = 50")
+print("Expected: area = 7853.98") 
+print("Actual:   area = {}".format( round(lab4.calculateAreaOfCircle(50),2) ))
