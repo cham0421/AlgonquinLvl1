@@ -1,0 +1,72 @@
+* {
+  text-align: left;
+  font-family: sans-serif;
+}
+
+body {
+  padding: 0 70px;
+}
+
+nav {
+  background-color: hsl(210, 50%, 50%);
+  list-style: upper-alpha;
+}
+
+nav ul {
+  list-style: none;
+  align-content: center;
+  padding-top: 20px;
+}
+
+nav ul li {
+  display: inline;
+  color: hsl(0, 0%, 100%);
+  padding: 0 12% 0 0;
+  font-size: 30px;
+  font-weight: 100;
+}
+
+.header-transition {
+  height: 20px;
+  background-color: hsl(215, 36%, 21%);
+}
+
+.photo-cover {
+  background-image: url(../img/ocean.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 5%;
+}
+
+.photo-cover h1 {
+  text-shadow: 2px 2px white;
+  font-size: 4rem;
+}
+
+.photo-cover h2 {
+  text-shadow: 2px 2px white;
+}
+
+h2 {
+  color: hsl(210, 50%, 66%);
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 30px;
+}
+
+h3 {
+  color: hsl(210, 50%, 66%);
+  font-size: 1.5rem;
+}
+
+ul {
+  padding-inline-start: 15px;
+}
+
+li {
+  font-size: 1.5rem;
+  line-height: 30px;
+}
