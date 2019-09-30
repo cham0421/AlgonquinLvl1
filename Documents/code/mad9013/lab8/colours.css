@@ -1,0 +1,90 @@
+/**
+Import Sans-Serif Web Font here using @import
+**/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+/**
+Create your CSS colour variables up here
+**/:root{
+  --primary1: hsl(4, 78%, 60%);
+  --primary2: hsl(4, 55%, 67%);
+  --secondary1:hsl(250, 61%, 42%);
+  --secondary2:hsl(250, 68%, 55%);
+  --grey1:hsl(0, 0%, 20%);
+  --grey2:hsl(0, 0%, 40%);
+  --grey3:hsl(0, 0%, 60%);
+  --grey4:hsl(0, 0%, 80%);
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans',Arial, sans-serif;
+}
+
+html {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+body {
+  font-weight: 300;
+}
+
+header {
+  padding: 1rem 2rem;
+  font-size: 3rem;
+  color: var(--grey4);
+  background-color: var(--secondary1);
+
+}
+
+nav {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--secondary2);
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+nav a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--grey3)
+}
+
+main {
+  padding: 1rem 2rem;
+  color: var(--grey1);
+}
+
+main h2 {
+  font-size: 2rem;
+  color: var(--primary2)
+}
+
+main p {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+ul {
+  margin: 1rem 2rem;
+}
+
+main li {
+  font-size: 1rem;
+  color: var(--primary1)
+}
+
+footer {
+  padding: 1rem 2rem;
+}
+
+footer p {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  color: var(--grey2)
+}
