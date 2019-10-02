@@ -1,4 +1,4 @@
-from gfxhat import lcd
+from gfxhat import lcd, backlight
 import random
 import time
 import os
