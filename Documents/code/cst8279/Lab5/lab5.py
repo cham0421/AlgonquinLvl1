@@ -8,7 +8,7 @@ def verticalLine(x,start=0,end=63):
     end = 63
   elif end < 0:
     end = 0
-  for i in range(start,end):
+  for i in range(start,end) if start < end else range(start,end,-1):
     lcd.set_pixel(x,i,1)
 
 #Create a function that displays a horizontal line at a given y coordinate.
@@ -17,7 +17,7 @@ def horizontalLine(y,start=0,end=127):
     end = 127
   elif end < 0:
     end = 0
-  for i in range(start, end):
+  for i in range(start,end) if start < end else range(start,end,-1):
     lcd.set_pixel(i,y,1)
  
 #Create a function that creates a staircase starting at a specific coordinate. One stair has a width of w and a height of h.
