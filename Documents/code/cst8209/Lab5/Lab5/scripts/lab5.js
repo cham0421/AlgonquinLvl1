@@ -28,6 +28,7 @@ myList.insertBefore(newListElement, myList.getElementsByTagName('li')[1])
 let newLastListElement = document.createElement('li')
 newLastListElement.textContent = "1.8.2 June 22, 2009"
 myList.appendChild(newLastListElement);
+
 // 7. Change the list item that contains the text 1.6 November 9999 to now contain the
 // text 1.6 November 2005
 myList.childNodes.forEach(element => {
