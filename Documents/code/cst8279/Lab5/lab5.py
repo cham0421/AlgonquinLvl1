@@ -17,8 +17,8 @@ while (choice != 0):
     cham0421Library.cleanScreen()
     xChoice = int(input("Choose the starting point x(0-127):"))
     yChoice = int(input("Choose the starting point y(0-63):"))
-    wChoice = int(input("Choose the width of the step:"))
-    hChoice = int(input("Choose the height of the step:"))
+    wChoice = int(input("Choose the width of the step( right/positive & left/negative ):"))
+    hChoice = int(input("Choose the height of the step( down/positive & up/negative ):"))
     cham0421Library.staircase(wChoice,hChoice,xChoice,yChoice)
   elif choice == 4:
     cham0421Library.cleanScreen()
