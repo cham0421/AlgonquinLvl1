@@ -57,6 +57,20 @@ test1 =  [
 [0,0,0,0,0,0,0,0]
 ]
 
+test2 = [
+[0,0,0,1,1,1,1,1,0,0,0],
+[0,0,1,1,1,1,1,1,1,0,0],
+[0,1,1,1,1,1,1,1,1,1,0],
+[1,1,1,1,1,1,1,1,0,0,0],
+[1,1,1,1,1,1,1,0,0,0,0],
+[1,1,1,1,1,1,0,0,0,0,0],
+[1,1,1,1,1,1,0,0,0,0,0],
+[1,1,1,1,1,1,1,0,0,0,0],
+[1,1,1,1,1,1,1,1,0,0,0],
+[0,1,1,1,1,1,1,1,1,1,0],
+[0,0,1,1,1,1,1,1,1,0,0],
+[0,0,0,1,1,1,1,1,0,0,0]
+]
 test3 = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -87,6 +101,7 @@ test3 = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 ]
+
 p = [
 [1,1,1,1,1,1,1,1,1,0,0,0],
 [1,1,1,1,1,1,1,1,1,1,0,0],
@@ -218,7 +233,7 @@ smile = [
 turnBacklight()
 xChoice = int(input("Choose the starting point x(0-127):"))
 yChoice = int(input("Choose the starting point y(0-63):"))
-choice  = int(input("Choose an object number(1-3):"))
+choice  = int(input("Choose an object number(1-4):"))
 if choice == 1:
   objectDisplay(test1,xChoice,yChoice)
   clearScreen()
@@ -226,8 +241,7 @@ elif choice == 2:
   objectDisplay(test2,xChoice,yChoice)
   clearScreen()
 elif choice == 3:
-  print("starting points disallowed")
-  objectDisplay(test3,xChoice,yChoice)
+  objectDisplay(test2,xChoice,yChoice)
   clearScreen()
 
 objectDisplay(p,0,0)
@@ -237,5 +251,4 @@ objectDisplay(h,39,0)
 objectDisplay(o,52,0)
 objectDisplay(n,65,0)
 objectDisplay(smile,80,0)
-clearScreen()
 clearBacklight()
