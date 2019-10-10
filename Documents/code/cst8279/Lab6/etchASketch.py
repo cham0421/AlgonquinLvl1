@@ -21,6 +21,10 @@ def clearScreen():
   lcd.clear()
   lcd.show()
 
+# Displays a text on the lcd screen
+# Inputs:  text (str): The string to be displayed
+#             x (int): The starting horizontal position of the object
+#             y (int): The starting vertical position of the object
 def displayText(text,x,y):
   lcd.clear()
   width, height = lcd.dimensions()
@@ -34,8 +38,14 @@ def displayText(text,x,y):
       pixel = image.getpixel((x1, y1))
       lcd.set_pixel(x1, y1, pixel)
   lcd.show() 
-  time.sleep(5)
 
+# Creates an Etch-A-Sketch game on the lcd
+# Controls:    up-arrow: Moves the position up one pixel
+#            down-arrow: Moves the position down one pixel
+#            left-arrow: Moves the position left one pixel
+#           right-arrow: Moves the position right one pixel
+#               's' key: Starts a new game
+#               'q' key: Quits the game and the function
 def etchASketch():
   c = 'p'
   print("Press s to start")
@@ -43,6 +53,7 @@ def etchASketch():
     c = getchar()
     if c == 's':
       displayText("ETCH-A-SKETCH",10,10)
+      time.sleep(2)
       clearScreen()
       x = 63
       y = 31
@@ -59,11 +70,13 @@ def etchASketch():
         x = 127
       x = (x-1) % 127
     else:
-      print("BAD INPUT")
+      print("Valid key are arrow keys , 'q', 's' ")
     lcd.set_pixel(x,y,1)
     lcd.show()
   clearScreen()
 
+
+# This is the execution code
 turnBacklight()
 clearScreen()
 etchASketch()
