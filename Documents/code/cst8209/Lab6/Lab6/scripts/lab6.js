@@ -23,11 +23,11 @@ bookArray[0] = book1;
 bookArray[1] = book2;
 bookArray[2] = book3;
 
-function addBooks() {
+function addBooks(array) {
   for (let index = 0; index < 3; index++) {
-    let addAuthor = prompt("Add the author for book " + index + ":", "")
-    let addTitle = prompt("Add the title for book " + index + ":", "")
-    let addGenre = prompt("Add the genre for book " + index + ":", "")
+    let addAuthor = prompt("Add the author for book " + (index+1) + ":", "")
+    let addTitle = prompt("Add the title for book " + (index+1) + ":", "")
+    let addGenre = prompt("Add the genre for book " + (index+1) + ":", "")
     if (addAuthor == "" || addTitle == "" || addGenre == "") {
       alert("Entries can't be blank");
       index--;
@@ -38,8 +38,24 @@ function addBooks() {
       title: addTitle,
       genre: addGenre
     };
-    bookArray.push(book);
+    array.push(book);
   }
 
 }
-addBooks();
+function displayRecommendations(array) {
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+
+    var title = document.createElement("h3")
+    title.innerHTML = "Book "+ (i+1)
+    var list = document.createElement("ul")
+    var item = document.createElement("li")
+    item.innerHTML = `Title: ${element.title}, Written By: ${element.author}, Genre: ${element.genre}`
+    list.append(item)
+    let bookList = document.getElementById("bookList")
+    bookList.appendChild(title)
+    bookList.appendChild(list)
+  }
+}
+addBooks(bookArray);
+displayRecommendations(bookArray);
