@@ -1,11 +1,55 @@
 <html>
 <head>
  <title>Lab 7</title>   
+ <style>
+ table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+ </style>
 </head>
 <body>
 <h3>Having Fun with JavaScript Events</h3>
     
 <p>Click on image to add to cart</p>
-
+<table>
+  <tr>
+    <th></th>
+    <th>Gum 1</th>
+    <th>Gum 2</th>
+    <th>Gum 3</th>
+    <th>Gum 4</th>
+  </tr>
+  <tr>
+    <th>Item Image</th>
+    <td><img src="./img/gum1.jpg" alt=""></td>
+    <td><img src="./img/gum2.jpg" alt=""></td>
+    <td><img src="./img/gum3.jpg" alt=""></td>
+    <td><img src="./img/gum4.jpg" alt=""></td>
+  </tr>
+  <tr>
+    <th>Shopping Cart Items</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Shopping Cart Total</th>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<button id="clearBtn">Clear</button>
+<script src="./scripts/app.js"></script>
 </body>
 </html>
