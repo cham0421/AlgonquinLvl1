@@ -1,27 +1,55 @@
 var totalCost = 0
-var cart = []
-var brands = [
-  {
-    "brand":"extra",
+var totalItems = 0
+var brands = [{
+    "brand": "extra",
     "price": 1.50
   },
   {
-    "brand":"wrigley",
+    "brand": "wrigley",
     "price": 2.00
   },
   {
-    "brand":"trident",
+    "brand": "trident",
     "price": 1.25
   },
   {
-    "brand":"bubble-gum",
+    "brand": "bubble-gum",
     "price": 0.99
   },
 ]
-function addPrice() {
 
+function update() {
+  document.getElementById("totalItems").innerHTML = totalItems
+  document.getElementById("totalCost").innerHTML = "$" + (totalCost.toFixed(2))
 }
+
+function addPrice(str) {
+  brands.forEach(element => {
+    if (element.brand == str) {
+      totalItems++;
+      totalCost += element.price
+    }
+    update()
+  });
+}
+
 function clear() {
-  cart = []
+  totalItems = 0
   totalCost = 0
+  update()
 }
+document.getElementById("extra").addEventListener("click", function () {
+  addPrice("extra");
+});
+document.getElementById("wrigley").addEventListener("click", function () {
+  addPrice("wrigley");
+});
+document.getElementById("trident").addEventListener("click", function () {
+  addPrice("trident");
+});
+document.getElementById("bubble-gum").addEventListener("click", function () {
+  addPrice("bubble-gum");
+});
+document.getElementById("clearBtn").addEventListener("click", function () {
+  clear();
+});
