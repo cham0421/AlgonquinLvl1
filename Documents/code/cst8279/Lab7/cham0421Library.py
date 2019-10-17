@@ -133,7 +133,7 @@ def objectDisplay(list, startX, startY):
     for j in range(0, len(list[i])):
       lcd.set_pixel(startX+j,startY+i,list[i][j])
   lcd.show()
-  time.sleep(.05)
+  time.sleep(.1)
 
 # Erases an Object based on a matrix of 0's and 1's
 # Inputs:  list (list/tuple): The matrix of 0's and 1's
