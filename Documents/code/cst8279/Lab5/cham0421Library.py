@@ -145,7 +145,7 @@ def eraseObject(list,startX=0,startY=0):
       lcd.set_pixel(startX+j,startY+i,0)
   lcd.show()
 
-# Displays an Object at startX+newX and startY+newY coordinates and returns the pair
+# Moves an Object while checking that the new position is valid
 # Inputs:  list (list/tuple): The matrix of 0's and 1's
 #               startX (int): The starting horizontal position of the object
 #               startY (int): The starting vertical position of the object
@@ -153,9 +153,13 @@ def eraseObject(list,startX=0,startY=0):
 #                 newY (int): The vertical displacement position of the object
 # Outputs: startX+newX (int): The new horizontal position of the object
 #          startY+newY (int): The new vertical position of the object
+#                 newX (int): The new horizontal displacement factor of the object
+#                 newY (int): The new vertical displacement factor of the object
 def moveObject(list,startX=0,startY=0,newX=0,newY=0):
+  eraseObject(list, startX, startY)
+  newX, newY = checkCollision(list, startX+newX, startY+newY, newX, newY)
   objectDisplay(list, startX+newX, startY+newY)
-  return  startX+newX, startY+newY,
+  return  startX+newX, startY+newY, newX, newY
 
 # Checks if the list will collide with the boundaries and changes the direction if it will
 # Inputs:  list (list/tuple): The matrix of 0's and 1's
@@ -167,36 +171,19 @@ def moveObject(list,startX=0,startY=0,newX=0,newY=0):
 #                   Sy (int): Screen boundary for Vertical
 # Output:         newX (int): The horizontal displacement of the object
 #                 newY (int): The vertical displacement position of the object
+
 def checkCollision(list,startX=0,startY=0,newX=0,newY=0,Sx=128,Sy=64):
-  if startY+newY < 0 :
+  if startY < 0 :
     startY = 0
     newY = newY*-1
-
-  elif startY+newY+ len(list) > Sy :
-    startY = Sy - len(list)-1
+  elif startY+ len(list) > Sy :
+    startY = Sy - len(list)
     newY = newY*-1
 
-  if startX+newX < 0:
+  if startX < 0:
     startX = 0
     newX = newX*-1
-
-  elif startX+newX + len(list[0]) > Sx :
-    startX = Sx - len(list[0]) -1    
+  elif startX + len(list[0]) > Sx :
+    startX = Sx - len(list[0])     
     newX = newX*-1
-  return  startX, startY, newX, newY
-
-# Main function to bounce a ball
-# Inputs:  list (list/tuple): The matrix of 0's and 1's
-#               startX (int): The starting horizontal position of the object
-#               startY (int): The starting vertical position of the object
-#                 newX (int): The horizontal displacement of the object
-#                 newY (int): The vertical displacement position of the object
-# Output:       startX (int): The new starting horizontal position of the object
-#               startY (int): The new starting vertical position of the object
-#                 newX (int): The horizontal displacement of the object (direction might have changed)
-#                 newY (int): The vertical displacement of the object (direction might have changed)
-def bounceBall(list,startX=0,startY=0,newX=0,newY=0):
-  eraseObject(list, startX, startY)
-  startX, startY,newX, newY = checkCollision(list, startX, startY, newX, newY)
-  startX, startY = moveObject(list,startX,startY,newX,newY)
-  return  startX, startY, newX, newY
+  return newX, newY
