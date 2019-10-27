@@ -1,4 +1,4 @@
-(function() {
+gumStore = (function() {
   var totalCost = 0
   var totalItems = 0
   var brands = [{
@@ -39,23 +39,25 @@
     totalCost = 0
     update()
   }
-  document.getElementById("extra").addEventListener("click", function () {
-    addPrice("extra");
-  });
-  document.getElementById("wrigley").addEventListener("click", function () {
-    addPrice("wrigley");
-  });
-  document.getElementById("trident").addEventListener("click", function () {
-    addPrice("trident");
-  });
-  document.getElementById("bubble-gum").addEventListener("click", function () {
-    addPrice("bubble-gum");
-  });
-  document.getElementById("clearBtn").addEventListener("click", function () {
-    clear();
-  });
+  
   return {
   addPrice,
   clear
   }
 }());
+
+document.getElementById("extra").addEventListener("click", function () {
+  gumStore.addPrice("extra");
+});
+document.getElementById("wrigley").addEventListener("click", function () {
+  gumStore.addPrice("wrigley");
+});
+document.getElementById("trident").addEventListener("click", function () {
+  gumStore.addPrice("trident");
+});
+document.getElementById("bubble-gum").addEventListener("click", function () {
+  gumStore.addPrice("bubble-gum");
+});
+document.getElementById("clearBtn").addEventListener("click", function () {
+  gumStore.clear();
+});
