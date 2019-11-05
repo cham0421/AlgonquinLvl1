@@ -33,7 +33,7 @@ Inputs:       totalTimes: the number of times the loop should iterate
 */
 function loopOutput(totalTimes) {
   for (let index = 0; index < totalTimes; index++) {
-    console.log(`${getFullName()} - ${sectionNum} - ${studentNum} - ${index+1}`);
+    console.log(`${getFullName()} - ${sectionNum} - ${studentNum} - ${index+1}`);    
   }
 }
 
