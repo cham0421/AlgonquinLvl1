@@ -171,3 +171,15 @@ print(html_color_codes['aqua'])
 myNewDict = invert_dict(mpl_color_map)
 print(myNewDict)
 print(myNewDict['blue'][0])
+
+
+try:
+  fin = open("font3.txt","r")
+  lc = 1
+  for line in fin:
+    print(line)
+    moveOn = 0
+  fin.close()
+
+except:
+    print("file now found")
