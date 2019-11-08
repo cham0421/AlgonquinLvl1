@@ -1,0 +1,75 @@
+//lab6 JavaScript file 
+
+
+
+
+
+function addBooks(bookArray) {
+  var i = 0;
+  while (i < 6) {
+    var recAuthor = prompt("please enter the name of Author: ");
+    var recTitle = prompt("please enter the Title: ");
+    var recGenre = prompt("please enter the Genre: ");
+
+    if (recAuthor == "" ||recTitle == "" ||recGenre == "" ){
+      continue;
+    }
+    newBook = {
+      author: recAuthor,
+      title: recTitle,
+      genre: recGenre
+    };
+    bookArray.push(newBook);
+    i++;
+  };
+  return bookArray;
+}
+bookArray = [
+  {
+    author: 'Willam Shakespeare', 
+    title: 'The tempest',
+    genre: 'Historical Fiction',
+  },
+  {
+    author: 'Stephan king',
+    title: 'The shining',
+    genre: 'Horror',
+  },
+  {
+    author: 'Anne Frank',
+    title: 'The diary of Ann Frank',
+    genre: 'Non - fiction',
+  },
+  {
+    author: 'Margret Atwood',
+    title: "The HandMade 's Tale",
+    genre: 'Fiction',
+  },
+  {
+    author: 'Farley Mowat',
+    title: 'Virumga',
+    genre: 'Non - fiction',
+  },
+  {
+    author: 'J.K Rawlings',
+    title: 'A caual vacancy',
+    genre: 'Non - fiction',
+  }
+]
+
+
+function displayRecommendations(bookArray) {
+  for (i in  bookArray) {
+    var menu = document.createElement('ul');
+    var authorItem = document.createElement("li");
+    var titleItem = document.createElement("li")
+    var genreItem = document.createElement("li")
+    // Add information to each li variable (authorItem/titleItem/genreItem)
+    // Add information to each li variable (authorItem/titleItem/genreItem)
+    // Add information to each li variable (authorItem/titleItem/genreItem)
+    //add li variables to ul element (You need to do this 3 times for each li)
+    document.getElementById('bookList').append(menu);
+  }
+}
+    bookArray = addBooks(bookArray);
+    displayRecommendations(bookArray);
