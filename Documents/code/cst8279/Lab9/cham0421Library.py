@@ -223,6 +223,7 @@ def outputCSV():
   fin = open(fileName,"r")
   for line in fin:
     print(line)
+  fin.close()
 
 # Reads the fonts3.txt file and creates a dictionary where the key is a character and the value is a 8x8bit representation of said character.
 def generateDictionary():
@@ -239,6 +240,7 @@ def generateDictionary():
     # Sets value of dictionary key to list value
     hexDic[id] = charList
   # Prompts for a key value and prints value on the pi lcd
+  fin.close()
   charRequest = input("Enter a character: ")
   if charRequest in hexDic:
     turnBacklight()
