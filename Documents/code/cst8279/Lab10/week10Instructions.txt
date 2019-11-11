@@ -1,0 +1,39 @@
+ 
+CST 8279 
+Lab 10
+version 1.0
+
+ 
+
+It is recommended that you read the entire lab before you start working.
+
+What you will do:
+
+Use Python to access SQLite3 database, read and write data.
+Use Python to open a web browser.
+Use Python libraries to perform various tasks.
+Task 1:
+Download and install SQLite broswer for your laptop operating system. DB Browser for SQLite (DB4S) is a high quality, visual, open source tool to create, design, and edit database files compatible with SQLite. you can download it from https://sqlitebrowser.org/dl/
+Download the SQLite3 database week10.db then use DB Browser for SQLite to open and get familiar with the database. The field Link in the db is a base64 encoded value of a URL.
+Task 2:
+Write a python program that:
+asks the user for a record number between 1 and 24, other values must be ignored and the user prompted again. Character q quits the program.
+writes and executes a SQLite3 query to extract the Link field associated with the record. (research and use the sqlite3 module)
+decodes the base64 encoded value of the URL. (research and use the base64 module)
+opens a web browser with the decoded URL. (research and use the webbrowser module)
+for that specific record, asks the user for name of the city and the country and updates the record. (research and use the sqlite3 module)
+Bonus: try to find out who in the class lives in that city and update the associated student field.
+Task 3: Submit your lab
+Upload the files to Github and make me a colaborator. Upload the Github link to Brightspace.
+Marking Scheme
+Rubric
+This lab has a maximum mark of 10, awarded according to the following rubric.
+
+Criteria	Mark
+Superior capability. Lab submitted meets or exceeds expected standards	10
+Satisfactory capability, acceptable product/result	7
+Marginal capability, substandard product/result	3
+No capability, unacceptable product/result. Work not submitted	0
+ 
+
+Note that 40% of your final grade comes from the grades you obtained from your labs and assignments.
