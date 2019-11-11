@@ -15,17 +15,23 @@ def Lab10():
       choice = 0
       continue
   # Connect to the database
+  # If can't connect exits function
   try:
     conn = sqlite3.connect('week10.db')
   except:
     print("Could not connect to database")
     return -1
   cursor = conn.cursor()
+
+  # Retrieves the encoded data
   data = cursor.execute("SELECT Link FROM Lab10 WHERE id={}".format(choice)).fetchall()
+  # Decodes the data
   url = base64.b64decode(data[0][0])
+  # Opens in web browser
   webbrowser.open_new_tab(url)
   city = input("What is the name of the city: ")
   country = input("What is the name of the country: ")
+  # Updates the cell information and commits to database  
   cursor.execute("UPDATE Lab10 SET City = '{}' , Country = '{}' where id ={}".format(city,country,choice))
   conn.commit()
   conn.close()
