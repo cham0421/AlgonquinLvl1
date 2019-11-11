@@ -207,46 +207,55 @@ def bounceBall(list,startX=0,startY=0,newX=0,newY=0):
 # Inputs:  fInFile: The name of the text file to read
 #         fOutFile: The name of the csv file to write(create)
 def csvMaker(fInFile,fOutFile):
-  fin = open(fInFile,"r")
-  fout = open(fOutFile,"w")
-  fout.write('"First Name", "Count" \n')
-  for line in fin:
-    lineArray = line.split(" ")
-    line = '"{}",{}\n'.format(lineArray[0],lineArray[1])
-    fout.write(line)
-  fin.close()
-  fout.close()
+  try:
+    fin = open(fInFile,"r")
+    fout = open(fOutFile,"w")
+    fout.write('"First Name", "Count" \n')
+    for line in fin:
+      lineArray = line.split(" ")
+      line = '"{}",{}\n'.format(lineArray[0],lineArray[1])
+      fout.write(line)
+    fin.close()
+    fout.close()
+  except:
+    print("Error with files")
 
 # Reads a csv file and outputs each line to console 
 def outputCSV():
-  fileName = input("Type the name of the file: ")
-  fin = open(fileName,"r")
-  for line in fin:
-    print(line)
-  fin.close()
+  try:
+    fileName = input("Type the name of the file: ")
+    fin = open(fileName,"r")
+    for line in fin:
+      print(line)
+    fin.close()
+  except:
+    print("Error with file")
 
 # Reads the fonts3.txt file and creates a dictionary where the key is a character and the value is a 8x8bit representation of said character.
 def generateDictionary():
-  fin = open("font3.txt","r")
-  hexDic= {}
-  for line in fin:
-    # Retreives the key from the line
-    id=line[-2:-1]
-    charList = []
-    # Reads every 2 hex digits and converts into binary then puts into a list
-    for char in range(2,18,2):
-      valueList = list(map(int,bin(int(line[char]+line[char+1],16))[2:].zfill(8)))
-      charList.append(valueList)
-    # Sets value of dictionary key to list value
-    hexDic[id] = charList
-  # Prompts for a key value and prints value on the pi lcd
-  fin.close()
-  charRequest = input("Enter a character: ")
-  if charRequest in hexDic:
-    turnBacklight()
-    objectDisplay(hexDic[charRequest],0,0)
-    time.sleep(1)
-    eraseObject(hexDic[charRequest],0,0)
-    clearBacklight()
-  else: 
-    print("Character not found")
+  try:
+    fin = open("font3.txt","r")
+    hexDic= {}
+    for line in fin:
+      # Retreives the key from the line
+      id=line[-2:-1]
+      charList = []
+      # Reads every 2 hex digits and converts into binary then puts into a list
+      for char in range(2,18,2):
+        valueList = list(map(int,bin(int(line[char]+line[char+1],16))[2:].zfill(8)))
+        charList.append(valueList)
+      # Sets value of dictionary key to list value
+      hexDic[id] = charList
+    # Prompts for a key value and prints value on the pi lcd
+    fin.close()
+    charRequest = input("Enter a character: ")
+    if charRequest in hexDic:
+      turnBacklight()
+      objectDisplay(hexDic[charRequest],0,0)
+      time.sleep(1)
+      eraseObject(hexDic[charRequest],0,0)
+      clearBacklight()
+    else: 
+      print("Character not found")
+  except:
+    print("Error reading")
