@@ -7,8 +7,8 @@ def Lab10():
   choice = 0
   
   # Keeps looping until the choice is 1-24 or 'q'
-  while (choice < 1 or choice > 24):
-    choice = input("Pick a number between 1-24: ")
+  while (choice < 1 or choice > 26):
+    choice = input("Pick a number between 1-26: ")
     if choice == 'q':
       return 0
     try:
