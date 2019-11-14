@@ -7,8 +7,8 @@ def Lab10():
   choice = 0
   
   # Keeps looping until the choice is 1-24 or 'q'
-  while (choice < 1 or choice > 26):
-    choice = input("Pick a number between 1-26: ")
+  while (choice < 1 or choice > 28):
+    choice = input("Pick a number between 1-28: ")
     if choice == 'q':
       return 0
     try:
@@ -37,9 +37,10 @@ def Lab10():
   webbrowser.open(url)
   city = input("What is the name of the city: ")
   country = input("What is the name of the country: ")
+  name = input("What is the name of the student: ")
 
   # Updates the cell information and commits to database  
-  cursor.execute("UPDATE Lab10 SET City = '{}' , Country = '{}' where id ={}".format(city,country,choice))
+  cursor.execute("UPDATE Lab10 SET City = '{}' , Country = '{}',  Student= '{}' where id ={}".format(city,country,name,choice))
   conn.commit()
   conn.close()
 
