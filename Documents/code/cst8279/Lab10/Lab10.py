@@ -6,7 +6,7 @@ import webbrowser
 def Lab10():
   choice = 0
   
-  # Keeps looping until the choice is 1-24 or 'q'
+  # Keeps looping until the choice is 1-28 or 'q'
   while (choice < 1 or choice > 28):
     choice = input("Pick a number between 1-28: ")
     if choice == 'q':
