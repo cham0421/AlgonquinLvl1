@@ -21,16 +21,16 @@ var validate = (function () {
       valid = false;
     }
     if (profile.city.value == "") {
-      document.getElementById('cityError').innerHTML = "*Please enter an City";
+      document.getElementById('cityError').innerHTML = "*Please enter an City*";
       valid = false;
     }
 
     if (profile.province.options.selectedIndex == 0) {
-      document.getElementById('provinceError').innerHTML = "*Please select a province";
+      document.getElementById('provinceError').innerHTML = "*Please select a Province*";
       valid = false;
     }
     if (profile.country.options.selectedIndex == 0) {
-      document.getElementById('countryError').innerHTML = "*Please select a country";
+      document.getElementById('countryError').innerHTML = "*Please select a Country*";
       valid = false;
     }
     // If all forms are valid displays a thank you
