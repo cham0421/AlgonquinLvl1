@@ -1,67 +1,46 @@
 //validate module
-var validate = (function () {
+var validate = function (e) {
 
-  function validFname(params) {
-    if (document.getElementById(fname).innerText() == " ")
-      return false;
-    return true;
+  e.preventDefault()
+  var valid = true
+
+  if (profile.firstName.value == ""){
+    document.getElementById('firstNameError').innerHTML="*Please enter a First Name*";
+    valid = false;
+  }
+  
+  if (profile.lastName.value == ""){
+    document.getElementById('lastNameError').innerHTML="*Please enter a Last Name*";
+    valid = false;
+  }
+  
+  if (profile.address1.value == ""){
+    document.getElementById('address1Error').innerHTML="*Please enter an Address";
+    valid = false;
+  }
+  if (profile.city.value == ""){
+    document.getElementById('cityError').innerHTML="*Please enter an City";
+    valid = false;
+  }
+  
+  if (profile.province.options.selectedIndex == 0){
+    document.getElementById('provinceError').innerHTML="*Please select a province";
+    valid = false;
+  }
+  if (profile.country.options.selectedIndex == 0){
+    document.getElementById('countryError').innerHTML="*Please select a country";
+    valid = false;
   }
 
-  function validLname(params) {
-    if (document.getElementById(Lname).innerText() == " ")
-      return false;
-    return true;
-  }
+  return valid;
+  
+};
 
-  function validAddress(params) {
-    if (document.getElementById(city).innerText() == " ")
-      return false;
-    return true;
-  }
-
-  function validCity(params) {
-    if (document.getElementById(city).innerText() == " ")
-      return false;
-    return true;
-  }
-
-  function validProvince(params) {
-    if (document.getElementById(province).innerText() == " ")
-      return false;
-    return true;
-  }
-
-  function validCountry(params) {
-    if (document.getElementById(country).innerText() == " ")
-      return false;
-    return true;
-  }
-  //create private and public functions/objects/variables to validate the form
-  function checkValid(params) {
-    if (validFname() &&
-      validLname() &&
-      validAddress() &&
-      validCity() &&
-      validProvince() &&
-      validCountry())
-      return true
-    return false
-  }
-  function clearField(params) {
-    document.getElementById(fname).innerText() = " "
-    document.getElementById(Lname).innerText() = " "
-    document.getElementById(address1).innerText() = " "
-    document.getElementById(city).innerText() = " "
-    document.getElementById(country).innerText() = " "
-    document.getElementById(province).innerText() = " "
-  }
-
-
-  return{
-    checkValid,
-    clearField
-  } 
-    
-
-}());
-
+var clear = function (e) {
+  profile.fname.value == " "
+  profile.lname.value == " "
+  profile.address1.value == " "
+  profile.city.value == " "
+  profile.province.options.selectedIndex === -1
+  profile.country.options.selectedIndex === -1
+}
