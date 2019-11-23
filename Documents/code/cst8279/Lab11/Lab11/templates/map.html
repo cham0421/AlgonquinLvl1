@@ -1,0 +1,14 @@
+{% extends "main.html" %}
+
+{% block title %}Map{% endblock %}
+
+{% block body %}
+<form action="#" method="post" target="_blank">
+  <select name="students" id="students">
+    {% for data in students %}
+    <option value="{{data["Students"]}}">{{data["Student"]}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit"></input>
+</form>
+{% endblock %}

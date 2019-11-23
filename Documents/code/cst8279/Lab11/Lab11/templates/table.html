@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+
+{% block title %}
+Student Table
+{% endblock%}
+
+{% block body %}
+
+
+<table>
+  <tr class="header">
+    <td>Student</td>
+    <td>Country</td>
+    <td>City</td>
+  </tr>
+{% for data in students %}
+  <tr>
+    <td><a target="_blank" href='{{ data["Link"] }}'>{{ data["Student"] }}</a></td>
+    <td>{{ data["Country"] }}</td>
+    <td>{{ data["City"] }}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+
+
+{% endblock %}
