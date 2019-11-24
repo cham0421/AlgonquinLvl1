@@ -5,9 +5,21 @@
 {% block body %}
 <table>
   <tr class="header">
-    <td><a href="{{url_for('table',sort = 'order by Student')}}"> Student</a></td>
-    <td><a href="{{url_for('table',sort = 'order by Country')}}">Country</a></td>
-    <td><a href="{{url_for('table',sort = 'order by City')}}">City</a></td>
+    <td>
+      <a href="{{url_for('table',sort = 'order by Student')}}"><img src="{{url_for('static',filename='img/up.png')}}" alt="Student Ascending"></a>
+      Student
+      <a href="{{url_for('table',sort = 'order by Student DESC')}}"><img src="{{url_for('static',filename='img/down.png')}}" alt="Student Descending"></a>
+    </td>
+    <td>
+      <a href="{{url_for('table',sort = 'order by Country')}}"><img src="{{url_for('static',filename='img/up.png')}}" alt="Country Ascending"></a>
+      Country
+      <a href="{{url_for('table',sort = 'order by Country DESC')}}"><img src="{{url_for('static',filename='img/down.png')}}" alt="Country Descending"></a>
+    </td>
+    <td>
+      <a href="{{url_for('table',sort = 'order by City')}}"><img src="{{url_for('static',filename='img/up.png')}}" alt="City Ascending"></a>
+      City
+      <a href="{{url_for('table',sort = 'order by City DESC')}}"><img src="{{url_for('static',filename='img/down.png')}}" alt="City Descending"></a>
+    </td>
   </tr>
   {% for data in students %}
   <tr>
