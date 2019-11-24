@@ -9,9 +9,9 @@ Student Table
 
 <table>
   <tr class="header">
-    <td>Student</td>
-    <td>Country</td>
-    <td>City</td>
+    <td><a href="{{url_for('table',sort = 'order by Student')}}"> Student</a></td>
+    <td><a href="{{url_for('table',sort = 'order by Country')}}">Country</a></td>
+    <td><a href="{{url_for('table',sort = 'order by City')}}">City</a></td>
   </tr>
 {% for data in students %}
   <tr>

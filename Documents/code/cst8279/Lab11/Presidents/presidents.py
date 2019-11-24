@@ -27,7 +27,7 @@ def detail(num):
     if president['Presidency'] == num:
         pres_dict = president
         break
-  return render_template('president.html', pres=pres_dict, the_title=pres_dict['President'])
+    return render_template('president.html', pres=pres_dict, the_title=pres_dict['President'])
 
 
 # keep this as is

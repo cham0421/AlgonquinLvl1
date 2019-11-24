@@ -1,7 +1,7 @@
 import sqlite3
 import base64
-def database_to_dict(lists):
-    
+def database_to_dict(sort):
+  
   try:
     conn = sqlite3.connect('week10.db')
   except:
@@ -10,7 +10,7 @@ def database_to_dict(lists):
   cursor = conn.cursor()
 
   # Retrieves the encoded data
-  data = cursor.execute("SELECT * FROM Lab10 ").fetchall()
+  data = cursor.execute("SELECT * FROM Lab10 {}".format(sort)).fetchall()
   listData = list()
   for row in data:
     tempList = list(row)
