@@ -18,8 +18,7 @@ def table(sort):
 @APP.route('/dropdown', methods=['GET', 'POST'])
 def dropdown():
   if request.method == "POST":
-    user_id = request.form.get("student-dropdown", None)
-    modules.openWeb(user_id)
+    modules.openWeb(request.form.get("student-dropdown", None))
   return render_template('dropdown.html', students=table_list)
 
 if __name__ == '__main__':
