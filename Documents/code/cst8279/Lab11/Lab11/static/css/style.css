@@ -6,9 +6,8 @@ td{
   font-weight: bolder;
 }
 table{
-width: 100%;
+  width: 100%;
 }
 #container{
   max-width: 1500px;
-
 }

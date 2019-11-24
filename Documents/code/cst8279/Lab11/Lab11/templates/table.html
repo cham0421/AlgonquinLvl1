@@ -1,26 +1,21 @@
 {% extends 'main.html' %}
 
-{% block title %}
-Student Table
-{% endblock%}
+{% block title %} Student Table {% endblock%}
 
 {% block body %}
-
-
 <table>
   <tr class="header">
     <td><a href="{{url_for('table',sort = 'order by Student')}}"> Student</a></td>
     <td><a href="{{url_for('table',sort = 'order by Country')}}">Country</a></td>
     <td><a href="{{url_for('table',sort = 'order by City')}}">City</a></td>
   </tr>
-{% for data in students %}
+  {% for data in students %}
   <tr>
     <td><a target="_blank" href='{{ data["Link"] }}'>{{ data["Student"] }}</a></td>
     <td>{{ data["Country"] }}</td>
     <td>{{ data["City"] }}</td>
   </tr>
-{% endfor %}
+  {% endfor %}
 </table>
 <p class="table-back"><a href="{{url_for('index')}}">Back</a></p>
-
 {% endblock %}

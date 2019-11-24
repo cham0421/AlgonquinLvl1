@@ -1,7 +1,9 @@
 import sqlite3
 import base64
+import webbrowser
+
 def database_to_dict(sort):
-  
+
   try:
     conn = sqlite3.connect('week10.db')
   except:
@@ -14,7 +16,7 @@ def database_to_dict(sort):
   listData = list()
   for row in data:
     tempList = list(row)
-    tempList[1] = str(base64.b64decode( tempList[1] ))[2:]
+    tempList[1] = str(base64.b64decode(tempList[1]))[2:]
     listData.append(tempList)
 
   lists = []
@@ -23,7 +25,13 @@ def database_to_dict(sort):
     row = {}
     for i in cursor.description:
       row[i[0]] = j[count]
-      count+=1
+      count += 1
     lists.append(row)
   conn.close()
   return lists
+
+def openWeb(user_id):
+  lists = database_to_dict(" ")
+  for element in lists:
+    if int(user_id) == int(element["id"]):
+      webbrowser.open(element['Link'])

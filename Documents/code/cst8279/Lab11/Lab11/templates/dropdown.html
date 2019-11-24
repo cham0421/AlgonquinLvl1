@@ -3,7 +3,7 @@
 {% block title %}Dropdown{% endblock %}
 
 {% block body %}
-<form action="{{url_for('map')}}" method="post" >
+<form action="{{url_for('dropdown')}}" method="post" >
   <select name="student-dropdown" id="students">
     {% for data in students %}
     <option value="{{data["id"]}}">{{data["Student"]}}</option>
