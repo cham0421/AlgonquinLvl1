@@ -3,12 +3,6 @@
 {% block title %}Map{% endblock %}
 
 {% block body %}
-<form action="#" method="post" target="_blank">
-  <select name="students" id="students">
-    {% for data in students %}
-    <option value="{{data["Students"]}}">{{data["Student"]}}</option>
-    {% endfor %}
-  </select>
-  <input type="submit"></input>
-</form>
+<a target="_blank" href='{{ data["Link"] }}'>Click here to be redirected..........I couldnt get it to work right.....screw you it works</a>
+<p class="map-back"><a href="{{url_for('index')}}">Back</a></p>
 {% endblock %}

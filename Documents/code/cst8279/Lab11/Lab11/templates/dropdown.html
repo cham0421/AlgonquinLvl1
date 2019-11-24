@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block title %}Dropdown{% endblock %}
+
+{% block body %}
+<form action="{{url_for('map')}}" method="post" >
+  <select name="student-dropdown" id="students">
+    {% for data in students %}
+    <option value="{{data["id"]}}">{{data["Student"]}}</option>
+    {% endfor %}
+  </select>
+  <input type="submit"></input>
+</form>
+<p class="map-back"><a href="{{url_for('index')}}">Back</a></p>
+{% endblock %}
