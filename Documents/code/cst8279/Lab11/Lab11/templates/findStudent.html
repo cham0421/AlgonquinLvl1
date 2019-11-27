@@ -1,9 +1,9 @@
 {% extends "main.html" %}
 
-{% block title %} Dropdown {% endblock %}
+{% block title %} Find Student {% endblock %}
 
 {% block body %}
-<form action="{{url_for('dropdown')}}" method="post" >
+<form action="{{url_for('findStudent')}}" method="post" >
   <select name="student-dropdown" id="students">
     {% for data in students %}
     <option value="{{data["id"]}}">{{data["Student"]}}</option>

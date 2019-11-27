@@ -9,17 +9,17 @@ def index():
   return render_template('index.html')
 
 
-@APP.route('/table/<sort>')
-def table(sort):
+@APP.route('/displayAll/<sort>')
+def displayAll(sort):
   table_list = modules.database_to_dict(sort)
-  return render_template('table.html', students=table_list)
+  return render_template('displayAll.html', students=table_list)
 
 
-@APP.route('/dropdown', methods=['GET', 'POST'])
-def dropdown():
+@APP.route('/findStudent', methods=['GET', 'POST'])
+def findStudent():
   if request.method == "POST":
     modules.openWeb(request.form.get("student-dropdown", None))
-  return render_template('dropdown.html', students=table_list)
+  return render_template('findStudent.html', students=table_list)
 
 if __name__ == '__main__':
     APP.debug = True
