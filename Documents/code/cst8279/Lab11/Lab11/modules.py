@@ -2,6 +2,7 @@ import sqlite3
 import base64
 import webbrowser
 
+# Gets student data from database with 'sort' order and puts data into a dictionary
 def database_to_dict(sort):
 
   try:
@@ -12,14 +13,17 @@ def database_to_dict(sort):
   cursor = conn.cursor()
 
   # Retrieves the encoded data
-  data = cursor.execute("SELECT * FROM Lab10 {}".format(sort)).fetchall()
+  data = cursor.execute("SELECT * FROM Lab10 where Student IS NOT NULL {}".format(sort)).fetchall()
   listData = list()
   for row in data:
+    # converts tuple to list
     tempList = list(row)
+    # replaces encoded data with decoded url
     tempList[1] = str(base64.b64decode(tempList[1]))[2:]
     listData.append(tempList)
 
   lists = []
+  # converts list into dictionary
   for j in listData:
     count = 0
     row = {}
@@ -30,6 +34,7 @@ def database_to_dict(sort):
   conn.close()
   return lists
 
+# opens url of row with id = user_id
 def openWeb(user_id):
   lists = database_to_dict(" ")
   for element in lists:
