@@ -43,7 +43,10 @@ LIMIT 99999;
 -- 5.Using a subquery, list the name of the city, the countrycode, the population and 
 -- the average city population of all cities with a population less than the average population. (city table)
 SELECT 
-    city.name, city.CountryCode, city.Population
+    city.name, city.CountryCode, city.Population,  (SELECT 
+            AVG(city.Population)
+        FROM
+            city) as avg_pop
 FROM
     city
 WHERE
