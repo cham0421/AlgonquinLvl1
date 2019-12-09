@@ -1,0 +1,43 @@
+3. 
+Countries
+-> name
+--> Name would be a good one to index as it would be the most filter used for this table
+
+Airlines
+-> name
+--> Name would be a good one to index as it would be the most filter used for this table
+
+-> country
+--> Countries is good as it is a natural means of grouping and filtering
+
+Flights
+-> arrival
+--> Since Departure is the PK arrival is a natural index 
+
+Aircrafts
+-> name
+--> Most people will recognize the name of the craft 
+
+Airports
+-> name
+--> Name would be a good one to index as it would be the most filter used for this table
+
+-> country
+--> Countries is good as it is a natural means of grouping and filtering
+
+4.
+Countries
+-> continent
+--> There is a small finite number so indexing it doesnt really help
+
+Airlines
+-> short_name
+--> An abbrieveiated version of name. Since name is indexed doesnt make sense to index short name
+
+Flights
+-> dep_time
+--> Because the departure time can change you dont want to index it
+
+-> duration
+--> Because the duration is subject to many changes you dont want to index it
+
