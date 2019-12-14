@@ -1,5 +1,5 @@
 -- View 1 (base)
-CREATE VIEW base AS
+CREATE or replace VIEW base AS
     SELECT 
         city.name AS cName,
         city.district,
@@ -17,6 +17,7 @@ CREATE VIEW base AS
     LIMIT 8999; 
 
 -- 2 (Part 1)
+CREATE or replace view c_data as
 SELECT 
     c.Continent,
     c.Region,
@@ -55,6 +56,7 @@ ORDER BY average_gnp_per_squarekilometer DESC
 LIMIT 10; 
 
 -- 2 (Part 2)
+create or replace view c_data as
     SELECT 
     c.Continent,
     c.Region,
@@ -94,6 +96,7 @@ ORDER BY average_gnp_per_person DESC
 LIMIT 10; 
 
 -- 2 (Part 3)
+create or replace view c_data as
     SELECT 
     c.Continent,
     c.Region,
@@ -132,3 +135,5 @@ WHERE
             country)
 ORDER BY average_gnp_per_person DESC
 LIMIT 10; 
+
+SELECT * FROM world.c_data;

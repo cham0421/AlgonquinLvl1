@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Waseem Chamaa</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/main.css">
+
+</head>
+
+<body>
+  <nav class="btn-group mainnav" role="group">
+    <a class="btn btn-primary" href="./home.html">Home</a>
+    <a class="btn btn-primary" href="./portfolio.html">Portfolio</a>
+    <a class="btn btn-primary active" href="./contact.html">Contact</a>
+  </nav>
+  <header class="header">
+
+    <div class="col-md-2 img-div">
+      <img src="./img/profile.jpg" alt="Picture of Waseem Chamaa" class="times-logo">
+    </div>
+    <h1 class="col-md-8">Contact for Hiring</h1>
+    <div class="col-md-2"></div>
+  </header>
+  <main class=" container content">
+    <form action="submit">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="FirstName">First Name: </label>
+          <input type="text" id="FirstName" class="col-md-12 form-control ">
+        </div>
+        <div class="col-md-6">
+          <label for="LastName">Last Name: </label>
+          <input type="text" id="LastName" class="col-md-12 form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <label for="email">Email: </label>
+          <input type="email" id="email" class="col-md-12 form-control">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="phone">Phone: </label>
+          <input type="tel" id="phone" class="col-md-12 form-control">
+        </div>
+        <div class="col-md-6">
+          <label for="dueDate">Project Due Date: </label>
+          <input type="date" id="dueDate" class="col-md-12 form-control">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <label for="detail">Job Detail: </label>
+          <textarea id="detail" class="col-md-12 form-control"></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="button" name="submit" id="submit" class="col-md-4 btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <p>&copy;2019 Waseem Chamaa</p>
+  </footer>
+</body>
+
+</html>

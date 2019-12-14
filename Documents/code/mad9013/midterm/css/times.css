@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin|Crimson+Text&display=swap');
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary1: rgb(233, 33, 33);
+    --primary2: hsl(255, 60%, 40%);
+    --secondary2: hsl(255, 72%, 48%);
+    --black: hsl(0, 0%, 0%);
+    --grey1: hsl(0, 0%, 20%);
+    --grey2: hsl(0, 0%, 40%);
+    --grey3: hsl(0, 0%, 90%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: 'Cabin', Helvetica, sans-serif;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Crimson Text', Times, serif;
+    padding: 10px 0;
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1500px;
+    margin: auto;
+}
+
+.subnav {
+    display: flex;
+    float: right;
+}
+
+.subnav a {
+    padding: 0 10px;
+}
+
+.subnav :hover {
+    color: var(--secondary2);
+}
+
+.mainnav {
+    background-color: var(--primary1);
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainnav :hover {
+    color: var(--secondary2);
+}
+
+.masthead {
+    background: var(--grey3);
+}
+
+.times-logo {
+    width: 100%
+}
+
+.masthead h1 {
+    text-align: center;
+    font-size: 35px;
+    color: var(--white);
+    background-color: var(--secondary2);
+}
+
+.content {
+    margin: auto;
+}
+
+.content .story {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.story.lead-story {
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.story.lead-story p {
+    color: var(--black);
+}
+
+h1.story-title {
+    color: var(--primary2);
+}
+
+.story img {
+    float: left;
+}
+
+.story p {
+    color: var(--grey1);
+}
+
+.story blockquote {
+    quotes: "\201E""\201D";
+    color: var(--grey2);
+    font-style: italic;
+    padding-left: 25px;
+}
+
+.story blockquote::before {
+    content: open-quote;
+}
+
+.story blockquote::after {
+    content: close-quote;
+}
+
+.story p.byline {
+    display: flow-root;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+.story :last-child {
+    padding: 0px;
+}
+
+p.byline span.author {
+    float: left;
+}
+
+p.byline span.pub {
+    float: right;
+}
+
+.foot {
+    margin-top: 10px;
+}
+
+.foot p {
+    color: var(--grey2);
+}
+
+@media screen and (max-device-width: 960px) {
+    .container {
+        max-width: 870px;
+        margin: auto;
+    }
+}

@@ -1,0 +1,138 @@
+$primary1: hsl(211,100%,40%)
+$primary2: hsl(211, 100%, 27%)
+$primary3: hsl(211, 100%, 90%)
+$secondary1: hsl(240, 64%, 27%)
+$secondary2: hsl(255, 72%, 48%)
+$darkBlue: hsl(240, 100%, 27%)
+$titleShadow: hsl(179, 100%, 88%)
+$grey1: hsl(0, 0%, 20%)
+$grey2: hsl(0, 0%, 40%)
+$grey3: hsl(0, 0%, 90%)
+$white: hsl(0, 0%, 100%)
+$sansStack: 'Cabin', Helvetica, sans-serif
+$serifStack: 'Crimson Text', Times, serif
+$largeScreen: 1200px
+$mediumScreen: 992px
+$smallScreen:  768px
+// Background picture: Building Covered with Fog by Harrison Haines ref:https://www.pexels.com/photo/building-covered-with-fog-2973102/ 
+.btn-primary:not(:disabled):not(.disabled) 
+  background-color: $primary1 
+  border: none
+  box-shadow: none
+.btn-primary:not(:disabled):not(.disabled):hover 
+  background-color: $primary2
+  border: none
+.btn-primary:not(:disabled):not(.disabled).active
+  background-color: $primary3
+  border: none
+.btn-primary:not(:disabled):not(.disabled):active 
+  box-shadow: none
+  border: none
+.mainnav 
+  background-color: $white
+
+
+html
+  font-size: 16px
+  line-height: 1.6
+  font-family: $sansStack
+  @media screen and ( max-width: $mediumScreen)
+    max-width: 100%
+    margin: auto
+
+h1,h2,h3,h4 
+  font-family: $serifStack
+  padding: 10px 0
+  text-decoration: underline
+
+.card
+  padding-top: 5px
+  padding-bottom: 5px
+
+label
+  color: $darkBlue
+.container
+  width: 100%
+  margin: 0 
+.content
+  max-width: 80%
+  margin: auto
+  @media screen and (max-width: $smallScreen)
+    max-width: 100%
+    padding: 0 0.5rem 
+    margin: 0
+.subnav  
+  display: flex 
+  float: right 
+  a  
+    padding: 0 10px 
+
+.header  
+  background-image: url(../img/header-image.jpg) 
+  background-position: bottom 
+  min-height: 40vh 
+  display: flex 
+  width: 100% 
+  margin: 0 
+  h1
+    text-shadow: 2px 1px $titleShadow
+    margin: auto
+    text-align: center
+    font-weight: bolder
+    
+
+.img-div  
+  text-align:  center 
+  margin: auto 
+ 
+
+.times-logo  
+  border-radius: 100%
+  height: 50%
+  margin: auto
+
+
+.technology  
+  margin: 1rem 
+  background-color: $secondary1 
+  border: $grey1 solid 0.2rem 
+  display: flex 
+  flex-direction: row 
+  img
+    margin: 1rem 
+    width: 11rem 
+    height: auto 
+    transform: scale(1.0) 
+    transition: transform 1.0s ease 
+  p
+    color: $white 
+  @media screen and (max-width: $mediumScreen)
+    display: block
+    flex-direction: row
+    margin: 1rem 1rem
+    img
+      width: 10rem
+      margin: 1rem 40%
+    p
+      color: $white 
+  @media screen and (max-width: $smallScreen)
+    flex-direction: column
+    align-items: center
+    padding: 0
+    margin: .25rem 0
+    img
+      margin: 1rem
+    p
+      margin: 0
+article.technology:hover  
+  border: $grey3 solid 0.2rem 
+  transform: scale(1.05) 
+  transition: transform 0.6s ease 
+  @media screen and (max-width: $smallScreen)
+    transform: none
+    transition: none 
+.foot  
+  margin-top: 10px 
+  p  
+    color: $grey2 
+ 
